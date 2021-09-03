@@ -7,7 +7,7 @@ public class Animal {
 	String scientificName;
 	
     //  Constructors
-	public Animal(String name,int age) {
+	public Animal(String name,int age, String scientificname) {
 		this.name = name;
 		this.age = age;
 	}
@@ -50,7 +50,7 @@ public class Animal {
 		System.out.println("Scientific Name: " + a.getScientificName());
 		
 		
-		Animal a2 = new Animal();
+		Animal a2 = new Animal("Domestic Pig", 16, "Sus scrofa domesticus");
 
 
 		System.out.println("Name: " + a.getName());
