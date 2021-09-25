@@ -20,8 +20,8 @@ public class AnimalFarm {
         animals[5]=new Animal("Bornean Bearded Pig",5,"Sus Barbatus");
         animals[6]=new Animal("Bighorn Sheep",9,"Ovis Canadensis", new Taxonomy());
 		
-		printAnimals();
-		
+		//printAnimals();
+		PrintEachAnimal();
 	} 
 	
 	public static void printAnimals() {
@@ -31,8 +31,22 @@ public class AnimalFarm {
 			System.out.println("Animal: " + i);
 			
 			System.out.println(animals[i]);
-		}
+			
+			
+				
+			}
+			
+			}
+
 		
+	
+	public static void PrintEachAnimal() {
+		
+		for(Animal a: animals) {
+	
+			System.out.println(a);	
+			
+		}
 	}
 	}
 
