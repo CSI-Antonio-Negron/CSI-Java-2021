@@ -1,8 +1,8 @@
 <div style="text-align:center">
-        <img    src="../../images/csi.png" 
+        <img    src="https://beginnersbook.com/wp-content/uploads/2017/09/for_loop_C.jpg" 
                 title="Colegio San Ignacio" 
-                width="20%" 
-                height="20%" />
+                width="60%" 
+                height="60%" />
 </div>
 <br>
 
@@ -46,6 +46,40 @@ for(int i = 0; i < 100; i++){
 
 <br>
 
+
+## Draw an X on a 2D Array using a For Loop `(10pts)`
+* Create a Java class in the package you have been using so far named `LaX.java`
+* Create a main method
+* Within the main method, create a 2D integer array filled with 0 values.
+  * it should have 9 columns and 9 rows
+* Fill in the question marks in the code to draw an X like the one displayed below..
+
+Sample snippet of code:
+```java
+int[][] arr = new int[9][9];
+
+for(int i = 0; i < arr.length; i++) {
+    arr[?][?]=1;
+    arr[?][?]=1;
+    System.out.println(Arrays.toString(arr[i]));
+}
+```
+Expected Output
+
+```java
+[1, 0, 0, 0, 0, 0, 0, 0, 1]
+[0, 1, 0, 0, 0, 0, 0, 1, 0]
+[0, 0, 1, 0, 0, 0, 1, 0, 0]
+[0, 0, 0, 1, 0, 1, 0, 0, 0]
+[0, 0, 0, 0, 1, 0, 0, 0, 0]
+[0, 0, 0, 1, 0, 1, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 1, 0, 0]
+[0, 1, 0, 0, 0, 0, 0, 1, 0]
+[1, 0, 0, 0, 0, 0, 0, 0, 1]
+```
+
+<br>
+
 # For-Each Loops
 A simpler version of the for loop is available. It is called for-each. This is often used when iterating through an entire list of `Object`s. It's syntax is similar, but varies slightly. It contains 2 statements separated by a `:` instead. The first statement is a temporary variable that represents what item of the array you are currently working on. The second represents the list that you are addressing.
 An example of the syntax using `animals` looks like this:
@@ -61,8 +95,6 @@ for(Animal a : animals){
 * Create an iterator that loops through your `animals` list and calls `toString()` for each animal. 
   * Remember that printing the object **reference** automatically calls this method.
   * You must use for-each syntax.
-
-<br>
 
 <br>
 
@@ -179,7 +211,72 @@ Expected Output
 [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
 [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 ```
+
 <br>
+
+
+## Draw an inverted X using 3D arrays `(10pts)`
+* Create a Java class in the package you have been using so far named `LaX3D.java`
+* Create a main method
+* Within the main method, create a 3D integer array filled with 0 values.
+  * It should have 2 grids of 9 columns and 9 rows
+* Create a nested `for` loop.
+  * The for loops should use `i`, `j` and `k` as variables respectively.
+* The first dimension should display the LaX code worked on the last class.
+* The second code should display a negation of the first array's output.
+
+Sample snippet of code:
+
+```java
+int[][][] arr = new int[2][9][9];
+
+System.out.println("--------------------------------");
+for (int j = 0; j < arr[0].length; j++) {
+  for (int k = 0; k < arr[0][j].length; k++) {
+
+    // X Logic Here
+    // Can be done in 2 lines
+
+  }
+  System.out.println(Arrays.toString(arr[0][j]));
+
+}
+
+System.out.println("--------------------------------");
+for (int j = 0; j < arr[1].length; j++) {
+  for (int k = 0; k < arr[1][j].length; k++) {
+
+    // Inverted X Logic Here
+    // Can be done in 1 line
+
+  }
+  System.out.println(Arrays.toString(arr[1][j]));
+}
+```
+Expected Output
+
+```java
+--------------------------------
+[1, 0, 0, 0, 0, 0, 0, 0, 1]
+[0, 1, 0, 0, 0, 0, 0, 1, 0]
+[0, 0, 1, 0, 0, 0, 1, 0, 0]
+[0, 0, 0, 1, 0, 1, 0, 0, 0]
+[0, 0, 0, 0, 1, 0, 0, 0, 0]
+[0, 0, 0, 1, 0, 1, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 1, 0, 0]
+[0, 1, 0, 0, 0, 0, 0, 1, 0]
+[1, 0, 0, 0, 0, 0, 0, 0, 1]
+--------------------------------
+[0, 1, 1, 1, 1, 1, 1, 1, 0]
+[1, 0, 1, 1, 1, 1, 1, 0, 1]
+[1, 1, 0, 1, 1, 1, 0, 1, 1]
+[1, 1, 1, 0, 1, 0, 1, 1, 1]
+[1, 1, 1, 1, 0, 1, 1, 1, 1]
+[1, 1, 1, 0, 1, 0, 1, 1, 1]
+[1, 1, 0, 1, 1, 1, 0, 1, 1]
+[1, 0, 1, 1, 1, 1, 1, 0, 1]
+[0, 1, 1, 1, 1, 1, 1, 1, 0]
+```
 
 # Class Discussion
 ## Answer the questions on the Markdown file located within your `Module6` directory (Module6.md).`(0pts)`
