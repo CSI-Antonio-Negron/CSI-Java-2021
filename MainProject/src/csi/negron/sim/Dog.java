@@ -1,4 +1,4 @@
-package csi.negron.inheritance;
+package csi.negron.sim;
 
 import javax.swing.ImageIcon;
 
@@ -11,6 +11,7 @@ public class Dog {
 	ImageIcon icon;
 	
 	
+	
 	Dog (){}
 	public Dog(String hair, int size, boolean wild, boolean gender, String directory ) {
 		super();
@@ -18,14 +19,22 @@ public class Dog {
 		this.size = size;
 		this.wild = wild;
 		this.gender = gender;
-		this.icon = new ImageIcon(getClass().getResource(directory));
+		this.icon = new ImageIcon(new ImageIcon(getClass().getResource(directory)).getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH));
 	}
 
 	public class Shit {
 		boolean stink = true;
 		int size;
 		String consistency;
+		
+		public Shit(boolean stink, int size, String consistency) {
+			super();
+			this.stink = stink;
+			this.size = size;
+			this.consistency = consistency;
+		}
 	}
+	
 	
 	public class Food {
 		boolean wet = false; 
@@ -38,8 +47,14 @@ public class Dog {
 	}
 	
     public class Noise{
-    	int decibals;
-    	String pitch;
+    	int decibels;
+    	boolean pitch;
+    	
+    	public Noise(int decibels, boolean pitch) {
+			super();
+			this.decibels = decibels;
+			this.pitch = pitch;
+		}
 	}
     
     
@@ -54,11 +69,15 @@ public class Dog {
 		return f.digest();
 	}
 	
-	void Die() {
+	void die() {
 		
 	}
 	
-    Noise Bark() {
+	void grow() {
+		
+	}
+	
+    Noise bark() {
     	return new Noise();
     }
     

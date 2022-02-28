@@ -1,4 +1,4 @@
-package csi.negron.inheritance;
+package csi.negron.sim;
 
 import java.awt.EventQueue;
 

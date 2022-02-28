@@ -1,4 +1,4 @@
-package csi.negron.inheritance;
+package csi.negron.sim;
 
 public class AmericanBully extends Dog {
 
