@@ -1,5 +1,7 @@
 package csi.negron.sim;
 
+import java.awt.Point;
+
 import javax.swing.ImageIcon;
 
 public class Dog {
@@ -9,6 +11,10 @@ public class Dog {
 	boolean wild = true;
 	boolean gender = true;
 	ImageIcon icon;
+	 int shit_x;
+	 int shit_y;
+	 int food_x;
+	 int food_y;
 	
 	
 	
@@ -26,6 +32,10 @@ public class Dog {
 		boolean stink = true;
 		int size;
 		String consistency;
+		ImageIcon icon = new ImageIcon(new ImageIcon(getClass().getResource("Dogshit.png")).getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH));
+//		int shit_x;
+//		 int shit_y;
+		Point point;
 		
 		public Shit(boolean stink, int size, String consistency) {
 			super();
@@ -33,18 +43,39 @@ public class Dog {
 			this.size = size;
 			this.consistency = consistency;
 		}
+		public Shit(Point point) {
+			super();
+			this.size = 5;
+			this.consistency = "Pasty";
+			this.point=point;
+		}
 	}
 	
 	
 	public class Food {
 		boolean wet = false; 
-		String tasty;
+		String taste;
+		Point point;
 		int bowlSize;
-		public Shit digest() {
-			// TODO Auto-generated method stub
-			return null;
+//		public Shit digest() {
+//			// TODO Auto-generated method stub
+//			return null;
+//		}
+		public Food(boolean wet,String taste,int bowlSize) {
+			super();
+			this.wet=wet;
+			this.taste=taste;
+			this.bowlSize=bowlSize;
 		}
+		public Food(Point point) {
+			super();
+			this.taste="tasty";
+			this.bowlSize=5;
+			this.point=point;
+		}
+		
 	}
+	
 	
     public class Noise{
     	int decibels;
@@ -65,7 +96,7 @@ public class Dog {
     	System.out.println("Tsssss");
 	}
 	
-	Shit eat(Food f) {
+	Shit eat(Food1 f) {
 		return f.digest();
 	}
 	
