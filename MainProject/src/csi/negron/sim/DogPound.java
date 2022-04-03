@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -54,6 +55,7 @@ public class DogPound extends JPanel implements ActionListener {
 
 	private Timer timer;
 	private final int DELAY = 140;
+	//public ImageIcon dogfood = new ImageIcon(new ImageIcon(getClass().getResource("treat.png")).getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH));
 
 	private int count;
 
@@ -97,16 +99,22 @@ public class DogPound extends JPanel implements ActionListener {
 		for (int z = 0; z < dogs1.size(); z++) {
 
 			g.drawImage(dogs1.get(z).icon.getImage(), x[z], y[z], this);        
-			 Toolkit.getDefaultToolkit().sync();
+			
 			
 		}
 		for (int z = 0; z < dogshit.size(); z++) {
 
 			g.drawImage(dogshit.get(z).icon.getImage(), x[z], y[z], this);        
-			 Toolkit.getDefaultToolkit().sync();
+			 
 			
 		}
+		for (int z = 0; z < food.size(); z++) {
+
+			g.drawImage(food.get(z).icon.getImage(), x[z], y[z], this);
+		}
+		Toolkit.getDefaultToolkit().sync();
 	}
+	
 
 //	private void gameOver(Graphics g) {
 //
@@ -190,18 +198,31 @@ public class DogPound extends JPanel implements ActionListener {
 		}
 
 	}
+	private void checkFood() {
+		   
+		   for(Food t : food) {
+	    		
+	    		if ((x[0] == t.food_x) && (y[0] == t.food_y) || (x1[0] == t.food_x) && (y1[0] == t.food_y)) {
+	            	
+	    			randomShit(dogs1.get(0), getGraphics());
+	    			
+	            	
+	            }
+	    	}
+	        
+	   }
 	
-	private void shitScoreBoard() {
-
-		
-		if (shitScore == 3) {
-			
-			dogshit.add(new Shit());
-
-			locateShit();
-		}
-
-	}
+//	private void shitScoreBoard() {
+//
+//		
+//		if (shitScore == 3) {
+//			
+//			dogshit.add(new Shit());
+//
+//			locateShit();
+//		}
+//
+//	}
 	
 	
 	private void checkShit() {
@@ -215,17 +236,40 @@ public class DogPound extends JPanel implements ActionListener {
 
 	}
 	
+//	private void locateFood() {
+//
+//		int r = (int) (Math.random() * RAND_POS);
+//		food_x = ((r * DOG_SIZE));
+//
+//		r = (int) (Math.random() * RAND_POS);
+//		food_y = ((r * DOG_SIZE));
+//		
+//		
+//		
+//	}
+	
 	private void locateFood() {
+	   	Random rd = new Random();
+//    	isBomb = false;
+    	int b = (int) (Math.random() * 50);
+        int food_x = ((b * DOG_SIZE));
 
-		int r = (int) (Math.random() * RAND_POS);
-		food_x = ((r * DOG_SIZE));
-
-		r = (int) (Math.random() * RAND_POS);
-		food_y = ((r * DOG_SIZE));
-		
-		
-		
-	}
+        b = (int) (Math.random() * 50);
+        int food_y = ((b * DOG_SIZE));
+        
+        food.add(new Dog().new Food(new Point(food_x,food_y)));
+        
+    }
+	
+//	public void randomShit(Dog d, Graphics g) {
+//
+//		  
+//		   Dog.Food f = new Dog().new Food(new Point());
+//		   Dog.Shit s = d.eat(f);
+//		   s.setLocation(new Point(x[0],y[0]));
+//		   dogshit.add(s);
+//		   
+//	   }
 	
 	private void locateShit() {
 
@@ -290,7 +334,7 @@ public class DogPound extends JPanel implements ActionListener {
 	   public void actionPerformed(ActionEvent e) {
 
 	        if (isRunning) {
-	        	checkFood();
+	        	//checkFood();
 	        	checkShit();
 	            checkCollision();
 	            move();

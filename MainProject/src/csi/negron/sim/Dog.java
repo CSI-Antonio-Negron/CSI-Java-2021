@@ -43,11 +43,19 @@ public class Dog {
 			this.size = size;
 			this.consistency = consistency;
 		}
-		public Shit(Point point) {
+		public Shit() {
 			super();
 			this.size = 5;
 			this.consistency = "Pasty";
-			this.point=point;
+			
+		}
+		
+		public Point getLocation() {
+			return point;
+		}
+
+		public void setLocation(Point location) {
+			this.point = location;
 		}
 	}
 	
@@ -57,6 +65,8 @@ public class Dog {
 		String taste;
 		Point point;
 		int bowlSize;
+		ImageIcon icon = new ImageIcon(new ImageIcon(getClass().getResource("treat.png")).getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH));
+
 //		public Shit digest() {
 //			// TODO Auto-generated method stub
 //			return null;
@@ -74,6 +84,15 @@ public class Dog {
 			this.point=point;
 		}
 		
+		public Shit digest() {
+			
+			return new Shit();
+		}
+		
+	}
+		public Shit eat(Food f) {
+		
+			return f.digest();
 	}
 	
 	
@@ -96,9 +115,7 @@ public class Dog {
     	System.out.println("Tsssss");
 	}
 	
-	Shit eat(Food1 f) {
-		return f.digest();
-	}
+	
 	
 	void die() {
 		

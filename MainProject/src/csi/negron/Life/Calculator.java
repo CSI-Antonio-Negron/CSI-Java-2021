@@ -127,7 +127,7 @@ public class Calculator {
 				System.out.println("Monthly car Payment: " + carLoan.getMonthlyPayment() + " For a total of "
 						+ carLoan.getTotalPayment());
 			}
-// You are poor. My house is 10x your salary.
+// expensive house.
 			if (age == 34 && cash > 200_000) {
 				double newHousePrice = 350_000;
 				double downPayment = 150_000;
@@ -161,7 +161,7 @@ public class Calculator {
 					+ invested + " invested.");
 // Did you make it?
 			if (age > 30 && cash < 0) {
-				System.out.println("Your poor, Get Outta here!");
+				System.out.println("You died!");
 			}
 
 			if (age > 79 && cash > 0) {
