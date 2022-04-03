@@ -163,7 +163,7 @@ public class Board extends JPanel implements ActionListener {
 
 	private void gameOver(Graphics g) {
 
-		String msg = "You Suck";
+		String msg = "You Died";
 		String mma = "Try Again";
 		Font small = new Font("Helvetica", Font.BOLD, 36);
 		FontMetrics metr = getFontMetrics(small);
